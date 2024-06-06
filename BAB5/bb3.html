@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DATA PLAYER</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-image:url('bb.jpg');
+        background-size:cover ;
+        font-family:  Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;
+      }
+
+      h1 {
+        margin-bottom: 50px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        background-image: url('AAA.jpg');
+        background-size: cover;
+        width: 30%;
+        margin: 20px auto;
+        padding: 20px;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: 0 4px 5px 2px rgba(4, 0, 255, 0.2);
+      }
+
+      .input {
+        display: flex;
+        padding: 10px;
+      }
+
+      label {
+        flex-basis: 20%;
+        text-align: left;
+      }
+
+      .input_form {
+        width: 100%;
+        padding: 5px;
+        margin-left: 20px;
+      }
+
+      .button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        background: rgb(91, 207, 243);
+        border-radius: 3px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .button:hover {
+        background-color: rgb(59, 194, 235);
+        font-size: 15px;
+      }
+
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>DATA PLAYER</h1>
+      <div class="container">
+        <h3>PLAYER </h3>
+        <form action="#" name="myForm">
+          <div class="input">
+            <label for="nama">Nama</label>
+            <input class="input_form" type="text" name="nama" id="nama" />
+          </div>
+
+          <div class="input">
+            <label for="umur">Umur</label>
+            <input class="input_form" type="text" name="umur" id="umur" />
+          </div>
+          <div class="input">
+            <label for="asal">Asal</label>
+            <input class="input_form" type="text" name="asal" id="asal" />
+          </div>
+          <div class="input">
+            <label for="hobi">Hobi</label>
+            <input class="input_form" type="text" name="hobi" id="hobi"/>
+          </div>
+          <div class="btn">
+            <input
+              type="button"
+              class="button"
+              name="btn_cetak"
+              value="CETAK"
+              onClick="cetak()"
+            />
+          </div>
+          <div class="btn">
+            <input
+              type="button"
+              class="button"
+              name="btn_delete"
+              value="Hapus"
+              onClick="hapus()"
+            />
+          </div>
+          <div class="input">
+            <textarea name="hasil" id="" rows="14" disabled></textarea>
+          </div>
+        </form>
+      </div>
+    </center>
+    <script>
+      function cetak() {
+        let myForm = document.myForm;
+        let nama = myForm.nama.value;
+        let umur = myForm.umur.value;
+        let asal = myForm.asal.value;
+        let hobi = myForm.hobi.value;
+
+        myForm.hasil.value = `PLAYER  
+
+
+        Nama : ${nama}
+        Umur  : ${umur}
+        Asal : ${asal}
+        Game ysng di Pilih : ${hobi}`;
+      }
+
+      function hapus() {
+        document.myForm.reset();
+      }
+    </script>
+  </body>
+</html>
